@@ -1,0 +1,93 @@
+<ion-view title="{{alert.title}}" ng-init="init('editMode')">
+    <ion-content>
+        <div class="padding">
+            <div class="card">
+                <div class="item item-divider">
+                    {{'answerToTheClient' | translate}}
+                </div>
+                <div class="item item-text-wrap">
+                    <textarea ng-model="message.messageText" type="text" rows="10"></textarea>
+                </div>
+                <li class="item item-checkbox">
+                    <label class="checkbox">
+                        <input type="checkbox" ng-model="message.checkedSendEmail">
+                    </label>
+                    {{'sendAlsoEmail' | translate}}
+                </li>
+            </div>
+            <button class="button button-dark" ng-click="backToList()">
+                {{'alertList' | translate}}
+            </button>
+            <button class="button button-assertive" ng-click="sendEmail()">{{'sendEmail' | translate}}</button>
+            <h4>{{'realLevelRisk' | translate}}</h4>
+            <div class="list">
+                <label class="item item-radio" >
+                    <input type="radio" name="group" ng-click="changeRealLevel('barrieraPubblicata')">
+                    <div class="item-content">
+                        {{'barrieraPubblicata' | translate}}
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio" >
+                    <input type="radio" name="group" ng-click="changeRealLevel('barrieraSegnalata')">
+                    <div class="item-content">
+                        {{'barrieraSegnalata' | translate}}
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio" >
+                    <input type="radio" name="group" ng-click="changeRealLevel('barrieraDenunciata')">
+                    <div class="item-content">
+                        {{'barrieraDenunciata' | translate}}
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio" >
+                    <input type="radio" name="group" ng-click="changeRealLevel('pronunciamentoGiudiziario')">
+                    <div class="item-content">
+                        {{'pronunciamentoGiudiziario' | translate}}
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio" >
+                    <input type="radio" name="group" ng-click="changeRealLevel('barrieraRimossa')">
+                    <div class="item-content">
+                        {{'barrieraRimossa' | translate}}
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio" >
+                    <input type="radio" name="group" ng-click="changeRealLevel('altro')">
+                    <div class="item-content">
+                        {{'altro' | translate}}
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+            </div>
+            <h4>{{'Status' | translate}}</h4>
+            <div class="list">
+                <label class="item item-radio" >
+                    <input type="radio" name="group" ng-click="changeStatus('Start')">
+                    <div class="item-content">
+                        {{'Start' | translate}}
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio" >
+                    <input type="radio" name="group" ng-click="changeStatus('InProgress')">
+                    <div class="item-content">
+                        {{'InProgress' | translate}}
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+                <label class="item item-radio" >
+                    <input type="radio" name="group" ng-click="changeStatus('Close')">
+                    <div class="item-content">
+                        {{'Close' | translate}}
+                    </div>
+                    <i class="radio-icon ion-checkmark"></i>
+                </label>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

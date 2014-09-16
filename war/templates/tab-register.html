@@ -1,0 +1,36 @@
+<ion-view title="{{'register' | translate}}">
+    <ion-content>
+        <div class="padding">
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">{{'name' | translate}}</span>
+                    <input ng-model="user.name" type="text">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">{{'surname' | translate}}</span>
+                    <input ng-model="user.surname" type="text">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">{{'email' | translate}}</span>
+                    <input ng-model="user.email" type="email" ng-change="inputChanges()">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">{{'phone' | translate}}</span>
+                    <input ng-model="user.phone" type="text">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">{{'password' | translate}}</span>
+                    <input ng-model="user.password" type="password" ng-change="inputChanges()">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">{{'repeatpassword' | translate}}</span>
+                    <input ng-model="user.repeatpassword" type="password">
+                </label>
+                <button ng-disabled="!buttonEnabled" class="button button-full button-assertive" ng-click="registerNewUser()">{{'register' | translate}}</button>
+                <button class="button button-energized" ng-click="backToLogin()">
+                    {{'login' | translate}}
+                </button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

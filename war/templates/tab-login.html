@@ -1,0 +1,27 @@
+<ion-view title="{{'login' | translate}}">
+    <ion-content>
+        <div class="padding" ng-show="showLogin">
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">{{'email' | translate}}</span>
+                    <input ng-model="user.email" type="email" ng-change="inputChanges()">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">{{'password' | translate}}</span>
+                    <input ng-model="user.password" type="password" ng-change="inputChanges()">
+                </label>
+                <button ng-disabled="!buttonEnabled" class="button button-full button-energized" ng-click="login()">{{'login' | translate}}</button>
+                <button class="button button-full button-assertive" ng-click="goToRegistration()">{{'register' | translate}}</button>
+            </div>
+        </div>
+        <div class="padding" ng-show="!showLogin">
+            <h4>{{'informations' | translate}}</h4>
+            <div class="list">
+                <div class="item item-text-wrap">
+                    {{'userAlreadyLogged' | translate}}<br><br>
+                </div>
+            </div>
+            <button class="button button-full button-stable" ng-click="logout()">{{'logout' | translate}}</button>
+        </div>
+    </ion-content>
+</ion-view>

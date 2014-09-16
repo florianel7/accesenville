@@ -1,0 +1,106 @@
+<ion-view title="{{alert.title}}" ng-init="init()">
+    <ion-content>
+        <div id="map-detail"></div>
+        <div class="padding">
+            <div class="list">
+                <li class="item item-checkbox" ng-show="control()">
+                    <span class="input-label">{{'enabled' | translate}}</span>
+                    <label class="checkbox">
+                        <input type="checkbox" ng-model="alert.enabled" ng-change="editAlertVisibility()">
+                    </label>
+                </li>
+                <label class="item item-input">
+                    <span class="input-label">{{'title' | translate}}</span>
+                    <label>{{alert.title}}</label>
+                </label>
+                <!--<label class="item item-input">
+                    <span class="input-label">{{'description' | translate}}</span>
+                    <label>{{alert.description}}</label>
+                </label>-->
+                <a class="item item-icon-left" ng-click="viewAllMessage(alert.description)">
+                    <i class="ion-chatbubble"></i>
+                    {{alert.description}}
+                </a>
+                <div class="item item-input" ng-show="control()">
+                    <textarea ng-model="alert.description" type="text" rows="5"></textarea>
+                </div>
+                <label class="item item-input">
+                    <span class="input-label">{{'address' | translate}}</span>
+                    <label ng-hide="control()">{{alert.address}}</label>
+                    <input type="text" ng-show="control()" ng-model="alert.address">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">{{'moreInformations' | translate}}</span>
+                    <label>{{alert.moreInformations}}</label>
+                </label>
+                <label class="item item-input" ng-show="control()">
+                    <span class="input-label">{{'userInformationsImported' | translate}}</span>
+                    <!-- <label>{{alert.userInformationsImported}}</label> -->
+                    <input type="text" ng-model="alert.userInformationsImported">
+                </label>
+                <label class="item item-input" ng-show="control()">
+                    <span class="input-label">{{'user' | translate}}</span>
+                    <!--<label>{{alert.creationUser}}</label>-->
+                    <input type="text" ng-model="alert.creationUser">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">{{'realLevelRisk' | translate}}</span>
+                    <label>{{alert.adminRisk | translate}}</label>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">{{'state' | translate}}</span>
+                    <label>{{alert.state | translate}}</label>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">{{'creationDate' | translate}}</span>
+                    <label>{{alert.creationDate | date:'dd/MM/yyyy HH:mm:ss' }}</label>
+                </label>
+                <label class="item item-input" ng-show="linkVisible">
+                    <span class="input-label">{{'photo' | translate}}</span>
+                    <a href="{{photoLink}}" target="_blank" class="button icon-left ion-image button-clear button-dark">{{'directLink' | translate}}</a>
+                </label>
+                <label class="item item-input" ng-show="linkAfterVisible">
+                    <span class="input-label">{{'photoAfter' | translate}}</span>
+                    <a href="{{photoAfterLink}}" target="_blank" class="button icon-left ion-image button-clear button-dark">{{'directLink' | translate}}</a>
+                </label>
+                <label class="item item-toggle" ng-show="control()">
+                    <div class="row">
+                        <div class="col col-75">
+                            <span class="buttonuploadmodal fileinput-button">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                <span>{{'choosePhoto' | translate}}</span>
+                                <!-- The file input field used as target for the file upload widget -->
+                                <input type="file" id="fileupload" name="file" accept='image/*' ng-click="fileUploadEditMode()"/>
+                            </span>
+                        </div>
+                        <div class="col">
+                            <h3>{{'photoAfter' | translate}}</h3>
+                        </div>
+                        <label class="toggle toggle-assertive">
+                            <input type="checkbox" ng-model="isPhotoAfter" ng-change="changePhotoAfter()">
+                            <div class="track">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </div>
+                </label>
+            </div>
+            <div class="list" ng-show="showMessageList">
+                <a class="item item-icon-left" ng-click="viewAllMessage(mex.message)" ng-repeat="mex in messageList">
+                    <i class="icon ion-chatbubble-working" ng-show="!mex.sendEmail"></i>
+                    <i class="icon ion-email" ng-show="mex.sendEmail"></i>
+                    {{mex.message}}
+                </a>
+            </div>
+            <button class="button button-dark" ng-click="backToList()">
+                {{'alertList' | translate}}
+            </button>
+            <button class="button button-assertive" ng-click="goToEdit(alert.id)" ng-show="control()">
+                {{'edit' | translate}}
+            </button>
+            <button class="button button-positive" ng-click="updateAlertAddress()" ng-show="control()">
+                {{'save' | translate}}
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

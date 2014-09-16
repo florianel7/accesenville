@@ -1,0 +1,17 @@
+<ion-view ng-init="getListAllViewAlert()">
+    <ion-nav-buttons side="right">
+        <a ng-click="openSearchModal()" class="button button-icon icon-left ion-ios7-search-strong"></a>
+        <a ng-click="goToListEarth()" class="button button-icon icon-left ion-earth"></a>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="list">
+            <a ng-repeat="alert in alertList | filter:search.filter"
+               href="#/tab/alert-detail/{{alert.id}}"
+               class="item item-thumbnail-left">
+                <img ng-src="img/map_search.png">
+                <h2>{{ alert.title }}</h2>
+                <h4>{{ alert.description }}</h4>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

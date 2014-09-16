@@ -1,0 +1,57 @@
+<ion-view title="{{'writeAlert' | translate}}">
+    <ion-content>
+        <div class="padding">
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">{{'title' | translate}}</span>
+                    <input ng-model="newAlert.title" type="text" ng-change="modalChanges()">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">{{'description' | translate}}</span>
+                    <textarea ng-model="newAlert.description" rows="4" ng-change="modalChanges()"></textarea>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">{{'address' | translate}}</span>
+                    <input ng-model="newAlert.address" class="controls" ng-change="modalChanges()"
+                           type="text">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">{{'moreInformations' | translate}}</span>
+                    <input type="text" ng-model="newAlert.moreInformations">
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">{{'email' | translate}}</span>
+                    <input ng-model="user.email" type="email" ng-change="modalChanges()">
+                </label>
+                <label class="item item-input" ng-show="uploadVisible">
+                    <span class="input-label">{{'photo' | translate}}</span>
+                    <span class="buttonuploadmodal fileinput-button">
+                        <i class="glyphicon glyphicon-plus"></i>
+                        <span>{{'choosePhoto' | translate}}</span>
+                        <!-- The file input field used as target for the file upload widget -->
+                        <input type="file" id="fileupload" name="file" accept='image/*' ng-click="fileUpload()"/>
+                    </span>
+                </label>
+                <div class="item item-button-right">
+                    {{'readPrivacy' | translate}}
+                    <button class="button button-assertive" ng-click="openModalPrivacy()">
+                        <i class="icon ion-clipboard"></i>
+                    </button>
+                </div>
+                <li class="item item-checkbox">
+                    <span class="input-label">{{'acceptPrivacy' | translate}}</span>
+                    <label class="checkbox">
+                        <input type="checkbox" ng-model="acceptObj.acceptAndContinue" ng-change="modalChanges()">
+                    </label>
+                </li>
+                <label ng-show="false">
+                    <div id="progressxx">
+                        <div class="barxx" style="width: 0%;"></div>
+                    </div>
+                </label>
+            </div>
+            <button ng-disabled="!sendVisible || buttonDisable" class="button button-dark" ng-click="createNewAlert()">{{'create' | translate}}</button>
+            <button class="button button-stable" ng-click="backToHome()">{{'abort' | translate}}</button>
+        </div>
+    </ion-content>
+</ion-view>

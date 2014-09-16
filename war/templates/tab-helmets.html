@@ -1,0 +1,9 @@
+<ion-view title="Caschi">
+  <ion-content class="has-header" ng-init="init()">
+    <ion-list>
+      <ion-item ng-repeat="helmet in helmetList" type="item-text-wrap" href="#/tab/friend/{{helmet.id}}">
+        {{helmet.name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

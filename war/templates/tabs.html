@@ -1,0 +1,36 @@
+<!-- 
+  Create tabs with an icon and label, using the tabs-positive style. 
+  Each tab's child <ion-nav-view> directive will have its own 
+  navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top tabs-dark">
+
+    <ion-tab title="{{'alertNew' | translate}}" icon="icon ion-location" href="#/tab/alert-new">
+        <ion-nav-bar class="bar-dark nav-title-slide-ios7"></ion-nav-bar>
+        <ion-nav-view name="tab-alert-new"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="{{'alertList' | translate}}" icon="icon ion-chatboxes" href="#/tab/alert-list">
+        <ion-nav-bar class="bar-dark nav-title-slide-ios7">
+            <ion-nav-back-button class="button-icon ion-arrow-left-c">
+            </ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view name="tab-alert-list"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="{{'privateArea' | translate}}" icon="icon ion-person" href="#/tab/login">
+        <ion-nav-bar class="bar-dark nav-title-slide-ios7">
+            <ion-nav-back-button class="button-icon ion-arrow-left-c">
+            </ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view name="tab-register"></ion-nav-view>
+    </ion-tab>
+
+    <ion-tab title="{{'help' | translate}}" icon="icon ion-help-circled" href="#/tab/help">
+        <ion-nav-bar class="bar-dark nav-title-slide-ios7">
+            <ion-nav-back-button class="button-icon ion-arrow-left-c">
+            </ion-nav-back-button>
+        </ion-nav-bar>
+        <ion-nav-view name="tab-help"></ion-nav-view>
+    </ion-tab>
+</ion-tabs>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+    <display-name>Acces En Ville</display-name>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+
+	<servlet>
+        <servlet-name>Enqueue</servlet-name>
+        <servlet-class>com.revevol.app.Enqueue</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Enqueue</servlet-name>
+        <url-pattern>/Enqueue</url-pattern>
+    </servlet-mapping>
+
+	<servlet>
+        <servlet-name>ImportFromExcel</servlet-name>
+        <servlet-class>com.revevol.app.ImportFromExcel</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ImportFromExcel</servlet-name>
+        <url-pattern>/ImportFromExcel</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GcsServlet</servlet-name>
+        <servlet-class>com.revevol.app.GcsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GcsServlet</servlet-name>
+        <url-pattern>/GcsServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CheckObjExistence</servlet-name>
+        <servlet-class>com.revevol.app.CheckObjExistence</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckObjExistence</servlet-name>
+        <url-pattern>/CheckObjExistence</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UploadFileServlet</servlet-name>
+        <servlet-class>com.revevol.app.UploadFileServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UploadFileServlet</servlet-name>
+        <url-pattern>/UploadFileServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AuthenticationServlet</servlet-name>
+        <servlet-class>com.revevol.app.AuthenticationServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AuthenticationServlet</servlet-name>
+        <url-pattern>/AuthenticationServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>com.revevol.app.UserServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/UserServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AlertServlet</servlet-name>
+        <servlet-class>com.revevol.app.AlertServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AlertServlet</servlet-name>
+        <url-pattern>/AlertServlet</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>PebaServlet</servlet-name>
+        <servlet-class>com.revevol.app.PebaServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PebaServlet</servlet-name>
+        <url-pattern>/PebaServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>SendMailServlet</servlet-name>
+        <servlet-class>com.revevol.app.SendMailServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SendMailServlet</servlet-name>
+        <url-pattern>/SendMailServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>InitializationDatastoreServlet</servlet-name>
+        <servlet-class>com.revevol.app.InitializationDatastoreServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InitializationDatastoreServlet</servlet-name>
+        <url-pattern>/createadmin</url-pattern>
+    </servlet-mapping>
+
+	<!-- 
+    <filter>
+        <description>Authorization filter</description>
+        <filter-name>AuthorizationFilter</filter-name>
+        <filter-class>com.revevol.app.AuthorizationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthorizationFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    -->
+
+    <filter>
+        <filter-name>ObjectifyFilter</filter-name>
+        <filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ObjectifyFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <security-constraint>
+		<web-resource-collection>
+			<web-resource-name>all</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<user-data-constraint>
+			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+</web-app>
