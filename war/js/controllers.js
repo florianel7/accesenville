@@ -252,7 +252,7 @@ angular.module('starter.controllers', ['ngCookies'])
 
             $scope.marker = new google.maps.Marker({
                 map:$scope.map,
-                draggable:true,
+                draggable:false,
                 animation: google.maps.Animation.DROP,
                 position: posVar
             });
@@ -577,7 +577,7 @@ angular.module('starter.controllers', ['ngCookies'])
             $scope.globalMapOptions = {
                 center: $scope.globalLatLng,
                 zoom: zoomValue,
-                zoomControl:false,
+                zoomControl:true,
                 mapTypeId: google.maps.MapTypeId.ROAD
             };
 
@@ -705,7 +705,7 @@ angular.module('starter.controllers', ['ngCookies'])
                 var tempMarker = new google.maps.Marker({
                     position: new google.maps.LatLng(alertGlobalObj.latitude,alertGlobalObj.longitude),
                     map: $scope.globalMap,
-                    draggable:true,
+                    draggable:false,
                     animation: google.maps.Animation.DROP,
                     title:$translate(alertGlobalObj.adminRisk),
                     icon: image,
@@ -1105,7 +1105,7 @@ angular.module('starter.controllers', ['ngCookies'])
                 zoom: 18,
                 mapTypeId: google.maps.MapTypeId.SATELLITE,
                 panControl: false,
-                zoomControl: false,
+                zoomControl: true,
                 disableDefaultUI: true
             };
             var map = new google.maps.Map(document.getElementById("map-detail"), mapOptions);
