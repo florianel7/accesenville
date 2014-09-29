@@ -222,7 +222,7 @@ angular.module('starter.controllers', ['ngCookies'])
             var mapOptions = {
                 center: posVar,
                 zoom: zoomValue,
-                zoomControl:false,
+                zoomControl:true,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
 
