@@ -340,7 +340,7 @@ angular.module('starter.controllers', ['ngCookies'])
                 var mapOptions = {
                     center: new google.maps.LatLng($scope.markerLat,$scope.markerLgt),
                     zoom: 6,
-                    zoomControl:false,
+                    zoomControl:true,
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
                 var map = new google.maps.Map(document.getElementById("map"),
